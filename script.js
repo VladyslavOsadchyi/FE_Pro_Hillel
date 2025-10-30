@@ -1,5 +1,4 @@
-let firstname = "Vlad";
-let age = 39;
-let country = "Ukraine";
-let massege = `Привіт, мене звати ${firstname}, мені ${age} років, я з ${country}!`;
+let number = 10369;
+let strNumber = number + '';
+let massege = `${strNumber[0]} ${strNumber[1]} ${strNumber[2]} ${strNumber[3]} ${strNumber[4]}`;
 console.log(massege);
