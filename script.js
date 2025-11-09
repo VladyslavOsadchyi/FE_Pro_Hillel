@@ -1,10 +1,18 @@
 // ДЗ_6.1
 // Створіть об'єкт, що містить інформацію про користувача, таку як ім'я, вік, місце проживання тощо. Створіть метод об'єкту для отримання та відображення цих даних.
-const user = {
-  name: `Vlad`,
-  age: 39,
-  city: `Kyiv`,
-};
-for (const key in user) {
-  console.log(`${key} - ${user[key]}`);
-}
+// const user = {
+//   name: `Vlad`,
+//   age: 39,
+//   city: `Kyiv`,
+// };
+// for (const key in user) {
+//   console.log(`${key} - ${user[key]}`);
+// }
+
+// ДЗ_6.2
+// Маєте масив чисел. Використовуйте вже існуючі методи масиву для створення нового масиву, в якому лише парні числа з оригінального масиву.
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const evenNumbers = numbers.filter(function (number) {
+  return number % 2 === 0;
+});
+console.log(evenNumbers);
