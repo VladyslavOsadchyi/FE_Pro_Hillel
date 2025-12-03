@@ -1,12 +1,10 @@
-// ДЗ № 11.2
-// Є блок із текстом на сторінці та кнопка. При натисканні на кнопку текст змінює колір. При повторному натисканні – повертається попередній колір
-const myText = document.querySelector("#text");
-const myButton = document.querySelector("#btn");
-function handleclick(event) {
-  if (myText.style.color === "red") {
-    myText.style.color = "";
-  } else {
-    myText.style.color = "red";
-  }
+// ДЗ № 11.3
+// Покласти в папку будь-які зображення 1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg, 6.jpg, 7.jpg, 8.jpg, 9.jpg. Вивести зображення, отримане випадковим чином (Math.random)
+const myPhoto = document.querySelector(`#photo`);
+const myBtn = document.querySelector(`#btn`);
+function getRandomPhoto() {
+  const RandomNumber = Math.floor(Math.random() * 9) + 1;
+  myPhoto.src = `img/${RandomNumber}.jpeg`;
 }
-myButton.addEventListener("click", handleclick);
+myBtn.addEventListener(`click`, getRandomPhoto);
+getRandomPhoto();
