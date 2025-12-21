@@ -5,11 +5,31 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>FE-PRO_Hillel</title>
-   <script src="/script.js"></script>
+   <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-   <h1>beginning of studies</h1>
+   <div class="dz_13">
+      <fieldset class="user_info">
+         <h1>We would like to help you</h1>
+         <form action="submit.php" method="post" novalidate>
+            <input type="text" id="name" name="user_name" placeholder="Name" required>
+            <br>
+            <textarea type="text" id="massage" name="massage" placeholder="Massage" rows="5"></textarea>
+            <span class="error" id="messageError"></span>
+            <br>
+            <legend>HOW TO ANSWER YOU?</legend>
+            <input type="tel" id="tel" name="tel" placeholder="Phone number" required>
+            <span class="error" id="phoneError"></span>
+            <br>
+            <input type="email" id="email" name="user_email" placeholder="Email" required>
+            <span class="error" id="emailError"></span>
+            <br>
+            <button type="submit">Send massage</button>
+         </form>
+      </fieldset>
+   </div>
+   <script src="/script.js"></script>
 </body>
 
 </html>

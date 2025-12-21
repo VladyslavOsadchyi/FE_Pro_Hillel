@@ -1,0 +1,49 @@
+.dz_13 {
+  width: 520px;
+  margin: 0 auto;
+  background-color: rgb(246, 241, 251);
+  border-radius: 15px;
+}
+.user_info {
+  padding: 20px;
+  border-radius: 15px;
+  border: none;
+  margin: 0;
+}
+input {
+  width: 450px;
+  height: 30px;
+  margin: 10px 0 10px 0;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+textarea {
+  width: 450px;
+  margin: 10px 0 10px 0;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+button {
+  width: 480px;
+  height: 45px;
+  margin: 10px 0 10px 0;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgb(62, 146, 241);
+  color: white;
+}
+legend {
+  color: grey;
+}
+h1 {
+  background: linear-gradient(to right, red, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.error {
+  color: red;
+  font-size: 12px;
+}
