@@ -1,39 +1,52 @@
-// ДЗ 12.1. - На сторінці є дві кнопки. При натисканні на першу кнопку користувач повинен ввести в prompt посилання, при натисканні на другу – переадресовується на інший сайт (за раніше введеним посиланням).
-// const container = document.querySelector(".DZ_12_1");
-// let savedLink = "";
-// container.addEventListener("click", function (event) {
-//   if (event.target.id === "setLink") {
-//     savedLink = prompt("Ввести посилання на сайт");
-//   }
-//   if (event.target.id === "goLink") {
-//     if (savedLink) {
-//       document.location.href = savedLink;
-//     } else {
-//       console.log("Спочатку введіть посилання на сайт");
-//     }
-//   }
-// });
-
-// ДЗ 12.2. - Створіть HTML-сторінку з декількома кнопками. Ваше завдання - створити обробник подій для батьківського елементу, який відслідковуватиме кліки на всіх кнопках.
-// const container = document.querySelector(".DZ_12_2");
-// container.addEventListener("click", function (event) {
-//   if (event.target.tagName === "BUTTON") {
-//     alert("Натиснуто кнопку з id: " + event.target.id);
-//   }
-// });
-
-// ДЗ № 12.3 - Створіть HTML-сторінку, яка містить список завдань (to-do list) з можливістю додавання нових завдань. Ваше ціль - використовуючи делегування подій, створити обробник подій для списку завдань, який дозволить видаляти завдання при кліку на них.
+// ДЗ № 15.1 - TODO з WebStorage
 const input = document.querySelector("#newTaskInput");
 const btn = document.querySelector("#addTaskBtn");
 const taskList = document.querySelector("#taskList");
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function renderTasks() {
+  taskList.innerHTML = "";
+  tasks.forEach((task) => {
+    const li = document.createElement("li");
+    if (task.done) li.classList.add("done");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = task.done;
+    checkbox.addEventListener("change", () => {
+      task.done = checkbox.checked;
+      saveTasks();
+      renderTasks();
+    });
+    const span = document.createElement("span");
+    span.textContent = task.text;
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Видалити";
+    deleteBtn.className = "delete-btn";
+    deleteBtn.addEventListener("click", () => {
+      tasks = tasks.filter((t) => t.id !== task.id);
+      saveTasks();
+      renderTasks();
+    });
+    li.append(checkbox, span, deleteBtn);
+    taskList.append(li);
+  });
+}
+
 btn.addEventListener("click", () => {
-  const text = input.value;
-  const li = document.createElement("li");
-  li.textContent = text;
-  taskList.append(li);
+  const text = input.value.trim();
+  if (text === "") return;
+  const newTask = {
+    id: Date.now(),
+    text: text,
+    done: false,
+  };
+  tasks.push(newTask);
+  saveTasks();
+  renderTasks();
+  input.value = "";
 });
-taskList.addEventListener("click", () => {
-  if (event.target.tagName === "LI") {
-    event.target.remove();
-  }
-});
+renderTasks();
