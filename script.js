@@ -1,17 +1,23 @@
-// ДЗ № 17.1 - Клас "Тренер"
+// ДЗ № 17.1 - Клас "Банківський рахунок"
 
-class Coach {
-  constructor(name, specialization, rating) {
-    this.name = name;
-    this.specialization = specialization;
-    this.rating = rating;
+class BankAccount {
+  constructor(balance) {
+    this.balance = balance;
   }
-  displayInfo() {
-    console.log(`Coach: ${this.name}, Specialization: ${this.specialization}, Rating: ${this.rating}`);
+  getBalance() {
+    return this.balance;
+  }
+  deposit(amount) {
+    this.balance += amount;
+  }
+  withdraw(amount) {
+    this.balance -= amount;
   }
 }
 
-const coach1 = new Coach("John Doe", "Fitness", 4.7);
-const coach2 = new Coach("Alice Smith", "Yoga", 4.9);
-coach1.displayInfo(); // "Coach: John Doe, Specialization: Fitness, Rating: 4.7"
-coach2.displayInfo(); // "Coach: Alice Smith, Specialization: Yoga, Rating: 4.9"
+const account1 = new BankAccount(1000);
+console.log(account1.getBalance()); // 1000
+account1.deposit(500);
+console.log(account1.getBalance()); // 1500
+account1.withdraw(200);
+console.log(account1.getBalance()); // 1300
