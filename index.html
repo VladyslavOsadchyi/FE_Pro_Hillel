@@ -5,11 +5,30 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>FE-PRO_Hillel</title>
-   <script src="/script.js"></script>
+   <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-   <h1>beginning of studies</h1>
+   <div class="weather-widget">
+      <div class="header">
+         <h2 id="city">Kyiv</h2>
+         <button id="refresh">Обновить</button>
+      </div>
+      <div class="datetime" id="datetime"></div>
+      <div class="main">
+         <div class="temp">
+            <span id="temperature">--</span>°C
+         </div>
+         <img id="icon" alt="weather icon" />
+      </div>
+      <div class="description" id="description">---</div>
+      <div class="details">
+         <div>Влажность: <span id="humidity">--</span>%</div>
+         <div>Ветер: <span id="wind">--</span> м/с</div>
+         <div>Давление: <span id="pressure">--</span> hPa</div>
+      </div>
+   </div>
+   <script src="/script.js"></script>
 </body>
 
 </html>

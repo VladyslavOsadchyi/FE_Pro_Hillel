@@ -1,0 +1,57 @@
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.weather-widget {
+  width: 300px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background: none;
+  border: 1px solid;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.temp {
+  font-size: 48px;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.details div {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.datetime {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
